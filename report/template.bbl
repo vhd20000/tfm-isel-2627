@@ -1,0 +1,87 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{debug/global//global/global}
+  \entry{glasman2010science}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GDH}{%
+         family={Glasman-Deal},
+         familyi={G\bibinithyphendelim D\bibinitperiod},
+         given={Hilary},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {World Scientific}%
+    }
+    \strng{namehash}{GDH1}
+    \strng{fullhash}{GDH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{Science research writing for non-native speakers of English}
+    \field{year}{2010}
+  \endentry
+
+  \entry{gustavii2016write}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GB}{%
+         family={Gustavii},
+         familyi={G\bibinitperiod},
+         given={Bj{\"o}rn},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Cambridge University Press}%
+    }
+    \strng{namehash}{GB1}
+    \strng{fullhash}{GB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{How to write and illustrate a scientific paper}
+    \field{year}{2016}
+  \endentry
+
+  \entry{newtest}{online}{}
+    \name{author}{1}{}{%
+      {{hash=BJ}{%
+         family={Bruin},
+         familyi={B\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJ1}
+    \strng{fullhash}{BJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{Newtest: command to compute new test {@ONLINE}}
+    \verb{url}
+    \verb http://www.ats.ucla.edu/stat/stata/ado/analysis/
+    \endverb
+    \field{month}{02}
+    \field{year}{2011}
+  \endentry
+\enddatalist
+\endinput
