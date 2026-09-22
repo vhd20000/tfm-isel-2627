@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.9.15)  16 SEP 2026 19:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.9.15)  22 SEP 2026 20:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1889,7 +1889,11 @@ File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 LaTeX Warning: Unused global option(s):
     [listof].
 
-(./template.aux)
+(./template.aux
+
+LaTeX Warning: Label `cha:introduction' multiply defined.
+
+)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 43.
@@ -2054,7 +2058,7 @@ Package todonotes Warning: The length marginparwidth is less than 2cm and will m
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Logo/01_ISEL-Logotipo-RGB_Horizontal-Principal-900┬║.png, id=91, 3420.2982pt x 853.7496pt>
+<Logo/01_ISEL-Logotipo-RGB_Horizontal-Principal-900┬║.png, id=183, 3420.2982pt x 853.7496pt>
 File: Logo/01_ISEL-Logotipo-RGB_Horizontal-Principal-900┬║.png Graphic file (type png)
 <use Logo/01_ISEL-Logotipo-RGB_Horizontal-Principal-900┬║.png>
 Package pdftex.def Info: Logo/01_ISEL-Logotipo-RGB_Horizontal-Principal-900┬║.png  used on input line 46.
@@ -2140,35 +2144,35 @@ LaTeX Font Warning: Font shape `U/mathx/m/n' in size <5.5> not available
 
 ]) [3
 
-] (./template.toc
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 26.
+] (./template.toc [4
+
+]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 49.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ))
 \tf@toc=\write7
 \openout7 = `template.toc'.
 
- [4
-
-] (./template.lof)
+ [5] (./template.lof)
 \tf@lof=\write8
 \openout8 = `template.lof'.
 
- [5
+ [6
 
 
 ] (./template.lot)
 \tf@lot=\write9
 \openout9 = `template.lot'.
 
- [6
+ [7
 
 
 ] (./template.lol)
 \tf@lol=\write10
 \openout10 = `template.lol'.
 
- [7
+ [8
 
 
 ]
@@ -2181,48 +2185,72 @@ Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}].
 \@myi=\count569
 (./Chapters/chapter1.tex
 Cap\'{\i }tulo 1.
+) (./Chapters/chapter2.tex [1
+
+
+
+
+
+]
+Cap\'{\i }tulo 2.
+[2
+
+]) (./Chapters/chapter3.tex
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 6.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
+Cap\'{\i }tulo 3.
+[4
+
+]) (./Chapters/chapter4.tex [5]
+Cap\'{\i }tulo 4.
+) (./Chapters/chapter5.tex [6
+
+]
+Cap\'{\i }tulo 5.
+) (./Chapters/chapter6.tex [7
+
+]
+Cap\'{\i }tulo 6.
+) (./Chapters/example_chapter1.tex [8
+
+]
+Cap\'{\i }tulo 7.
 
 Overfull \hbox (21.45209pt too wide) in paragraph at lines 25--26
 []\T1/ppl/m/n/10 Use a capa apre-sen-tada neste do-cu-mento. Com-plete a in-for-ma-��o apre-sen-tada no fi-cheiro \T1/pcr/m/n/10 datas.tex\T1/ppl/m/n/10 . 
  []
 
-[1
-
-
-
-
+[9
 
 ]
 Overfull \hbox (10.0pt too wide) in paragraph at lines 61--107
 []$[]$ $[]$ 
  []
 
-) (./Chapters/chapter2.tex
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 7.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [3]
-Cap\'{\i }tulo 2.
+) (./Chapters/example_chapter2.tex [10] [11]
+Cap\'{\i }tulo 8.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 50.
 
 Overfull \hbox (33.23146pt too wide) in paragraph at lines 58--62
-\T1/ppl/m/n/8 The the-sis style in-clu-des the fol-lowing op-ti-ons (see Ta-bela [][]2.1[][]), that must be in-clu-ded in the op-ti-ons list in the \T1/pcr/m/n/8 \documentclass[options]
+\T1/ppl/m/n/8 The the-sis style in-clu-des the fol-lowing op-ti-ons (see Ta-bela [][]8.1[][]), that must be in-clu-ded in the op-ti-ons list in the \T1/pcr/m/n/8 \documentclass[options]
  []
 
-[4
+[12
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 101.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-) [5]
+) [13]
 Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
-[6]) (./Chapters/chapter3.tex [7]
-Cap\'{\i }tulo 3.
-<Chapters/img/evolution_steps-vectorial.pdf, id=262, 250.9375pt x 150.5625pt>
+[14]) (./Chapters/example_chapter3.tex [15]
+Cap\'{\i }tulo 9.
+<Chapters/img/evolution_steps-vectorial.pdf, id=451, 250.9375pt x 150.5625pt>
 File: Chapters/img/evolution_steps-vectorial.pdf Graphic file (type pdf)
 <use Chapters/img/evolution_steps-vectorial.pdf>
 Package pdftex.def Info: Chapters/img/evolution_steps-vectorial.pdf  used on input line 46.
@@ -2232,15 +2260,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
-[8
+[16
 
  <./Chapters/img/evolution_steps-vectorial.pdf>]
-<Chapters/img/ra-vectorial.pdf, id=371, 327.60553pt x 331.45352pt>
+<Chapters/img/ra-vectorial.pdf, id=560, 327.60553pt x 331.45352pt>
 File: Chapters/img/ra-vectorial.pdf Graphic file (type pdf)
 <use Chapters/img/ra-vectorial.pdf>
 Package pdftex.def Info: Chapters/img/ra-vectorial.pdf  used on input line 68.
 (pdftex.def)             Requested size: 113.81102pt x 115.14561pt.
-<Chapters/img/ra-raster.png, id=372, 328.5pt x 331.785pt>
+<Chapters/img/ra-raster.png, id=561, 328.5pt x 331.785pt>
 File: Chapters/img/ra-raster.png Graphic file (type png)
 <use Chapters/img/ra-raster.png>
 Package pdftex.def Info: Chapters/img/ra-raster.png  used on input line 75.
@@ -2250,12 +2278,12 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 11.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-))) [9 <./Chapters/img/ra-vectorial.pdf> <./Chapters/img/ra-raster.png>]
+))) [17 <./Chapters/img/ra-vectorial.pdf> <./Chapters/img/ra-raster.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 59--59
  |\T1/ppl/b/n/24.88 Refer�ncias|
  []
 
-[10
+[18
 
 
 ]
@@ -2300,18 +2328,21 @@ L3 programming layer <2024-01-22>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: C1808BEEC614743A787C5CC0CA472588;3061.
+(rerunfilecheck)             Checksum: 267892419020FB0BB5A49497E1F9E597;5819.
 Package logreq Info: Writing requests to 'template.run.xml'.
 \openout1 = `template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49558 strings out of 474222
- 920398 string characters out of 5748733
+ 49675 strings out of 474222
+ 922564 string characters out of 5748733
  2128975 words of memory out of 5000000
- 70740 multiletter control sequences out of 15000+600000
- 690622 words of font info for 283 fonts, out of 8000000 for 9000
+ 70805 multiletter control sequences out of 15000+600000
+ 692299 words of font info for 285 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  109i,16n,107p,2385b,2846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2320,11 +2351,11 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txmia.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template.pdf (19 pages, 612562 bytes).
+</usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txmia.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on template.pdf (28 pages, 635831 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
- 138 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 749 PDF objects out of 1000 (max. 8388607)
+ 645 compressed objects within 7 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
