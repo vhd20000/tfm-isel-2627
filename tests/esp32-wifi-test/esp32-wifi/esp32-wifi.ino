@@ -1,7 +1,7 @@
 /*
  *  === WiFi test ===
  *
- *  This sketch sends a message to a TCP server
+ *  This sketch sends a message to a HTTP server
  *
  */
 
