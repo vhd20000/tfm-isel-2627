@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex template"] 1790103800.29773 "template.aux" "template.bbl" "template" 1790103803.02414 0
+["bibtex template"] 1790520568.31155 "template.aux" "template.bbl" "template" 1790520571.11944 0
   "./bibliography.bib" 1780077057 1768 5fdf52b6096182f1428dddae36a44dcd ""
-  "./template-blx.bib" 1790103802.73653 346 c5266626c93a7a9388320dddfdaa1370 ""
+  "./template-blx.bib" 1790520570.82394 346 c5266626c93a7a9388320dddfdaa1370 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1678141846 65484 b7949c47a88ed6dca66ebc7a04577312 ""
-  "template.aux" 1790103802.72853 15665 23a8412a44990d79e28f9a8559d16803 "pdflatex"
+  "template.aux" 1790520570.81594 15680 0f11e7994b5313e828befe545f2cb069 "pdflatex"
   (generated)
   "template.bbl"
   "template.blg"
   (rewritten before read)
-["pdflatex"] 1790103800.37786 "/home/vdin/ISEL/TFM/tfm-isel-2627/report/template.tex" "template.pdf" "template" 1790103803.02428 0
+["pdflatex"] 1790520568.38509 "/home/vdin/ISEL/TFM/tfm-isel-2627/report/template.tex" "template.pdf" "template" 1790520571.11957 0
   "/etc/texmf/web2c/texmf.cnf" 1789505854.84601 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/vdin/ISEL/TFM/tfm-isel-2627/report/template.tex" 1780077057 1500 ee3a3c0d15b08dadae56fa54bcf8e80f ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -374,9 +374,9 @@
   "Chapters/chapter4.tex" 1789586430.31462 2106 803b7f5492aabfa1a4e43b8a86d3fd19 ""
   "Chapters/chapter5.tex" 1789586468.36634 2080 6bde62deffb4fd9b4762b6deb843bef8 ""
   "Chapters/chapter6.tex" 1789586486.8452 2082 1edec42eb732dde3dd7506e14b56a025 ""
-  "Chapters/example_chapter1.tex" 1789585210.22131 5991 8a2c7d4eaba07c2210474cd86e1d9773 ""
-  "Chapters/example_chapter2.tex" 1789585768.00647 8866 a8a90b4d113336ed0fc830769d327555 ""
-  "Chapters/example_chapter3.tex" 1789585768.00647 4101 114c4d232e67af3e395eff3efd9f7fb5 ""
+  "Chapters/example_chapter1.tex" 1790520556.75656 5996 50a81556c8f17ebf4c55e942b2ddea81 ""
+  "Chapters/example_chapter2.tex" 1790520562.41076 8871 60c647d4b73b2d210b873eb23b6f7832 ""
+  "Chapters/example_chapter3.tex" 1790520567.87196 4106 aeb050c53e0a6623e324641f213fe0e7 ""
   "Chapters/img/evolution_steps-vectorial.pdf" 1780077057 28482 325e776703148aeb0c16c3400fc0bcaf ""
   "Chapters/img/ra-raster.png" 1780077057 6876 e24d3f276581c04c5aff9e2464e6029c ""
   "Chapters/img/ra-vectorial.pdf" 1780077057 16969 84eda4d4faea9f2affff094d70d7315a ""
@@ -390,15 +390,15 @@
   "iselreport.cls" 1780077057 15371 2676dce178a074ad12ab849c9323bb43 ""
   "sty/code.sty" 1789584180.94417 8647 5838da0511359e1bb8ec0c2b9ea748d2 ""
   "sty/relationalAlgebra.sty" 1780077057 1373 8606de7175730d5e5289d9bcb4f02eb1 ""
-  "template.aux" 1790103802.72853 15665 23a8412a44990d79e28f9a8559d16803 "pdflatex"
-  "template.bbl" 1790103800.37248 2273 be8c3689e9c0fdbc026466947f2929fd "bibtex template"
-  "template.lof" 1790103802.73855 657 7d22ec5ce696e0faa3821300b3290a66 "pdflatex"
-  "template.lol" 1790103802.73855 132 de7a23cda2baf36d8b7bb761a48e6ff5 "pdflatex"
-  "template.lot" 1790103802.73855 935 48a94c8ce0a1398fa6180bacb471d81b "pdflatex"
-  "template.out" 1790103802.73453 5819 267892419020fb0bb5a49497e1f9e597 "pdflatex"
-  "template.run.xml" 1790103802.73855 2727 1c1cb591d7ac19e87cd52c5d8f1b3612 "pdflatex"
+  "template.aux" 1790520570.81594 15680 0f11e7994b5313e828befe545f2cb069 "pdflatex"
+  "template.bbl" 1790520568.37996 2273 be8c3689e9c0fdbc026466947f2929fd "bibtex template"
+  "template.lof" 1790520570.82466 657 7d22ec5ce696e0faa3821300b3290a66 "pdflatex"
+  "template.lol" 1790520570.82466 132 de7a23cda2baf36d8b7bb761a48e6ff5 "pdflatex"
+  "template.lot" 1790520570.82466 935 48a94c8ce0a1398fa6180bacb471d81b "pdflatex"
+  "template.out" 1790520570.82094 5819 267892419020fb0bb5a49497e1f9e597 "pdflatex"
+  "template.run.xml" 1790520570.82466 2727 1c1cb591d7ac19e87cd52c5d8f1b3612 "pdflatex"
   "template.tex" 1780077057 1500 ee3a3c0d15b08dadae56fa54bcf8e80f ""
-  "template.toc" 1790103802.73855 3883 8a7fe7acd42891d9e9f84afef510bafb "pdflatex"
+  "template.toc" 1790520570.82466 3883 8a7fe7acd42891d9e9f84afef510bafb "pdflatex"
   (generated)
   "template-blx.bib"
   "template.aux"
