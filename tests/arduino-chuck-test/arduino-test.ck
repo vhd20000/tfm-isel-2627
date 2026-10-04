@@ -1,4 +1,4 @@
-// ===   Arduino Connection Test   ===
+// ===   ESP32-C3 / Arduino Connection Test   ===
 
 // This script serves to test the connection between an Arduino
 // board and ChucK
@@ -9,11 +9,13 @@
 // =============================
 // --- Constants
 
+// BAUD rate
+SerialIO.B9600 => int BAUD;
+
 // Serial input values
 0 => int MIN_SERIAL_INPUT;
-1024 => int MAX_SERIAL_INPUT;
+4095 => int MAX_SERIAL_INPUT;
 MAX_SERIAL_INPUT - MIN_SERIAL_INPUT => int RANGE_SERIAL_INPUT;
-
 
 // Pitches
 220 => int MIN_FREQ;
@@ -27,6 +29,7 @@ MAX_FREQ - MIN_FREQ => int RANGE_FREQ;
 [60, 62, 63, 65, 67, 68, 71, 72] @=> int cMinHarmScale[];
 [60, 62, 64, 67, 69, 72, 74, 76, 79, 81, 84] @=> int cMajPentScale[];
 [60, 63, 65, 67, 70, 72, 75, 77, 79, 82, 84] @=> int cMinPentScale[];
+cMinPentScale @=> int SYSTEM_SCALE[];
 
 // =============================
 // --- Variables
@@ -36,10 +39,10 @@ SerialIO serial;
 
 // Voices (oscilators)
 SinOsc leadOsc => dac;
-0.2 => leadOsc.gain;
+0.25 => leadOsc.gain;
 
-// Playback flag
-false => int playPitch;
+// Device to use
+0 => int device;
 
 // =============================
 // --- Functions
@@ -57,9 +60,8 @@ fun float calcNoteInScale(int value, int scale[]) {
 // =============================
 // --- Open device connection
 
-0 => int device;
 SerialIO.list() @=> string list[];
-if( !serial.open(device, SerialIO.B9600, SerialIO.ASCII) )
+if( !serial.open(device, BAUD, SerialIO.ASCII) )
 {
     <<< "ERROR - unable to open serial device" >>>;
 	me.exit();
@@ -67,7 +69,6 @@ if( !serial.open(device, SerialIO.B9600, SerialIO.ASCII) )
 
 // =============================
 // --- Infinite time-loop
-
 while(true)
 {
     // Handle serial msg
@@ -75,7 +76,7 @@ while(true)
     serial.getLine() => string line;
     Std.atoi(line) => int value;
 
-    // <<< value >>>;
+    <<< value >>>;
     
     // Control pitch
     if (value < 0) {
@@ -83,6 +84,6 @@ while(true)
     }
     else {
         // calcPitch(value) => leadOsc.freq;
-        calcNoteInScale(value, cMinPentScale) => leadOsc.freq;
+        calcNoteInScale(value, SYSTEM_SCALE) => leadOsc.freq;
     }
 }

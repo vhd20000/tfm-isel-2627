@@ -1,4 +1,4 @@
-// ===   Arduino Connection Test   ===
+// ===   ESP32-C3 / Arduino Connection Test   ===
 
 // This script serves to test the connection between an Arduino
 // board and ChucK
@@ -10,8 +10,8 @@
 // Constants / Variables
 
 const int BAUD = 9600;
-const int POTENC_PIN = A0;
-const int BUTTON_PIN = A1;
+const int BUTTON_PIN = 0;
+const int POTENC_PIN = 1;
 
 bool isButtonPressed = 0;
 int potentiometer = 0;
@@ -22,8 +22,6 @@ int loopDelay = 10;  // ms
 
 void setup() {
   Serial.begin(BAUD);
-  pinMode(POTENC_PIN, INPUT);
-  pinMode(BUTTON_PIN, INPUT);
 }
 
 void loop() {
