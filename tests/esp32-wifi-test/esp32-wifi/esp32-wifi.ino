@@ -8,6 +8,9 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
+#define PIN_BTN 0
+#define PIN_POT 1
+
 // === Constants
 const int BAUD = 9600;
 
@@ -16,8 +19,10 @@ const char *PASS = "pass";
 const char *HOST = "XXX.XXX.XXX.XXX";
 const uint16_t PORT = 8000;
 const int MAX_TRIES = 360;
+const int NUM_REQUESTS_TOTAL = 10;
 
-const int TIME_BETWEEN_TRIES = 500; // ms
+const int TIME_BETWEEN_CONNECT_TRIES = 500;  // ms
+const int TIME_BETWEEN_REQUESTS = 5000;  // ms
 
 const String SPACE = String(" ");
 const String NEW_LINE = String("\r\n");
@@ -39,6 +44,7 @@ bool connectToNetwork(const char* ssid, const char* pass) {
   // Connect to Wi-Fi network
   Serial.print("Connecting to "); Serial.println(ssid);
   WiFi.begin(ssid, pass);
+  WiFi.setTxPower(WIFI_POWER_8_5dBm);
 
   // Wait until connection is established, stop if MAX_TRIES is exceeded
   int retryCount = 0;
@@ -49,7 +55,7 @@ bool connectToNetwork(const char* ssid, const char* pass) {
       return false;
     }
 
-    delay(TIME_BETWEEN_TRIES);
+    delay(TIME_BETWEEN_CONNECT_TRIES);
     Serial.print(".");
     retryCount++;
   }
@@ -136,6 +142,14 @@ void sendRequest(char *method, String action, String parameters = "") {
   closeConnectionWithServer();
 }
 
+int readAnalogData(int pin) {
+  return analogRead(pin);
+}
+
+int readPotenciometer(int threshold = 100) {
+  return analogRead(PIN_BTN) > threshold ? analogRead(PIN_POT) : -1;
+}
+
 // === Loops
 void setup() {
   Serial.begin(BAUD);
@@ -150,16 +164,19 @@ void loop() {
   }
 
   // -- Connect to Python server
-  Serial.println("\n\n");
-  for (int i = 0; i < 10; i++) {
-    Serial.print("=========== "); Serial.print("REQUEST Nº"); Serial.println(i+1);
+  Serial.print("\nTest started\nSending "); Serial.print(NUM_REQUESTS_TOTAL); Serial.println(" requests to server ...\n");
+  for (int i = 0; i < NUM_REQUESTS_TOTAL; i++) {
+    Serial.print("====== "); Serial.print("REQUEST Nº"); Serial.println(i+1);
 
     // String request = random(2) ? String("/change_note_up") : String("/change_note_down");
     String request = "/update_note";
-    String parameters = String("?value=") + String( analogRead(0) );
+    // String parameters = String("?value=") + String( readPotenciometer() );
+    String parameters = String("?value=") + String( readAnalogData(4) );
     sendRequest("GET", request, parameters);
 
     Serial.println("\n\n");
-    delay(5000);
+    delay(TIME_BETWEEN_REQUESTS);
   }
+  stopExecution = true;
+  Serial.println("\n======   Program execution stopped   ======");
 }
