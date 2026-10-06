@@ -1,8 +1,14 @@
 /*
- *  === WiFi test ===
+ *  === ESP32 WiFi / ChucK test ===
  *
- *  This sketch sends a message to a HTTP server
- *
+ *  This sketch sends a message to a HTTP server.
+ *  
+ *    It has two use modes (also called "playMode"):
+ *  - INSTRUMENT: On this mode the board reads the analog data from a potenciometer sends it to the HTTP server. That info
+ *  is later sent to a ChucK script via OSC to play a note on Sine Oscilator 
+ *  - DEBUG_REQUEST: This mode is for DEBUG only. When configured to this mode, the board sends N requests to the HTTP server.
+ *  The requests can call 1 out of 3 methods defined on the HTTP server (implemented in the script 'server.py' on the project
+ *  directory) and additionally can send a value read from the board's analog pin 4
  */
 
 #include <Arduino.h>
@@ -11,6 +17,13 @@
 #define PIN_BTN 0
 #define PIN_POT 1
 
+// === Enums
+// Play modes (INSTRUMENT - read analog value and send to server/chuck; DEBUG_REQUEST - send N http requests to server)
+enum PlayMode {
+  INSTRUMENT,
+  DEBUG_REQUEST
+};
+
 // === Constants
 const int BAUD = 9600;
 
@@ -18,23 +31,25 @@ const char *SSID = "ssid";
 const char *PASS = "pass";
 const char *HOST = "XXX.XXX.XXX.XXX";
 const uint16_t PORT = 8000;
-const int MAX_TRIES = 360;
+const int MAX_NETWORK_CONNECTION_TRIES = 360;
 const int NUM_REQUESTS_TOTAL = 10;
 
 const int TIME_BETWEEN_CONNECT_TRIES = 500;  // ms
-const int TIME_BETWEEN_REQUESTS = 5000;  // ms
+const int TIME_BETWEEN_REQUESTS = 50;  // ms
 
 const String SPACE = String(" ");
 const String NEW_LINE = String("\r\n");
 const String REQUEST_PROTOCOL = String("HTTP/1.1");
 
 // === Variables
+int playMode = PlayMode::INSTRUMENT;  // THIS FLAG CHANGES CURRENT SCRIPT MODE (INSTRUMENT or DEBUG_REQUEST)
 bool isConnectedToNetwork = false;
 bool isConnectedToServer = false;
 bool stopExecution = false;
 NetworkClient client;
 
 // === Functions
+// -- Wifi connection
 bool connectToNetwork(const char* ssid, const char* pass) {
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
   WiFi.mode(WIFI_STA);
@@ -46,10 +61,10 @@ bool connectToNetwork(const char* ssid, const char* pass) {
   WiFi.begin(ssid, pass);
   WiFi.setTxPower(WIFI_POWER_8_5dBm);
 
-  // Wait until connection is established, stop if MAX_TRIES is exceeded
+  // Wait until connection is established, stop if MAX_NETWORK_CONNECTION_TRIES is exceeded
   int retryCount = 0;
   while (WiFi.status() != WL_CONNECTED) {
-    if (retryCount > MAX_TRIES) {
+    if (retryCount > MAX_NETWORK_CONNECTION_TRIES) {
       Serial.print("Unable to connect to "); Serial.println(ssid);
       Serial.println("Please try again");
       return false;
@@ -90,6 +105,7 @@ void scanNearNetworks() {
   Serial.println("");
 }
 
+// -- Server connection
 bool openConnectionWithServer(const char *host, const uint16_t port) {
   Serial.print("Connecting to "); Serial.println(host);
 
@@ -108,6 +124,7 @@ void closeConnectionWithServer() {
   isConnectedToServer = false;
 }
 
+// -- Http request
 String formatRequest(char *method, String request, const char *host, String parameters) {
   return method + SPACE + request + parameters + SPACE + REQUEST_PROTOCOL + NEW_LINE + 
   "Host: " + host + NEW_LINE + NEW_LINE; 
@@ -142,6 +159,7 @@ void sendRequest(char *method, String action, String parameters = "") {
   closeConnectionWithServer();
 }
 
+// -- Read data
 int readAnalogData(int pin) {
   return analogRead(pin);
 }
@@ -150,20 +168,15 @@ int readPotenciometer(int threshold = 100) {
   return analogRead(PIN_BTN) > threshold ? analogRead(PIN_POT) : -1;
 }
 
-// === Loops
-void setup() {
-  Serial.begin(BAUD);
-  delay(10);
-
-  isConnectedToNetwork = connectToNetwork(SSID, PASS);
+// -- Play back modes
+void instrumentMode() {
+  String request = "/update_note";
+  String parameters = String("?value=") + String( readPotenciometer() );
+  sendRequest("GET", request, parameters);
+  delay(TIME_BETWEEN_REQUESTS);
 }
 
-void loop() {
-  if (!isConnectedToNetwork || stopExecution) {
-    while(1);
-  }
-
-  // -- Connect to Python server
+void requestDebugMode() {
   Serial.print("\nTest started\nSending "); Serial.print(NUM_REQUESTS_TOTAL); Serial.println(" requests to server ...\n");
   for (int i = 0; i < NUM_REQUESTS_TOTAL; i++) {
     Serial.print("====== "); Serial.print("REQUEST Nº"); Serial.println(i+1);
@@ -179,4 +192,25 @@ void loop() {
   }
   stopExecution = true;
   Serial.println("\n======   Program execution stopped   ======");
+}
+
+// === Loops
+void setup() {
+  Serial.begin(BAUD);
+  delay(10);
+
+  isConnectedToNetwork = connectToNetwork(SSID, PASS);
+}
+
+void loop() {
+  if (!isConnectedToNetwork || stopExecution) {
+    while(1);
+  }
+
+  // -- Connect to Python server and act
+  if (playMode == PlayMode::INSTRUMENT) {
+    instrumentMode();
+  } else if (playMode == PlayMode::DEBUG_REQUEST) {
+    requestDebugMode();
+  }
 }

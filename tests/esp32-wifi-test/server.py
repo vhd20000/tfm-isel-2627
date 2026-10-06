@@ -1,14 +1,38 @@
-# === Simple Python server ===
+"""
+    ===   ESP32-C3 WiFi / ChucK Connection Test   ===
+
+# === Simple Python HTTP server ===
+
+This script implements a simple Python HTTP server, serving
+as the bridge between an ESP32-C3 board and a ChucK script
+
+The server receives analog data from the board via WiFi and
+transmits it to ChucK via OSC messages
+"""
+
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from pythonosc.udp_client import SimpleUDPClient
 import urllib.parse
 
 
+# -- Contacts
+HTTP_ADDRESS = ("0.0.0.0", 8000)
+OSC_ADDRESS = ("127.0.0.1", 8001)
+
+
 # -- Functions
+def send_osc_message(osc_address, message, value):
+    with SimpleUDPClient(*osc_address) as client:
+        client.send_message(message, value)
+
+
 def update_note(data):
     value = data.get('value', [None])[0]
     if value is None:
         return False
-    print(f"Updated note with value={value}")
+    # print(f"Updated note with value={value}")
+    send_osc_message(OSC_ADDRESS, "/value", int(value))
     return True
 
 
@@ -55,4 +79,4 @@ class Handler(BaseHTTPRequestHandler):
 
 
 # -- Run server
-HTTPServer(("0.0.0.0", 8000), Handler).serve_forever()
+HTTPServer(HTTP_ADDRESS, Handler).serve_forever()
