@@ -1,1 +1,11 @@
 .idea/
+report/template.aux
+report/template.fdb_latexmk
+report/template.fls
+report/template.lof
+report/template.log
+report/template.lol
+report/template.lot
+report/template.out
+report/template.pdf
+report/template.synctex.gz
