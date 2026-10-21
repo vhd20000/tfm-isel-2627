@@ -1,8 +1,6 @@
 """
     ===   ESP32-C3 WiFi / ChucK Connection Test   ===
 
-# === Simple Python HTTP server ===
-
 This script implements a simple Python HTTP server, serving
 as the bridge between an ESP32-C3 board and a ChucK script
 

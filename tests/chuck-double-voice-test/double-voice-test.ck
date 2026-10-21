@@ -1,7 +1,7 @@
 // ===   Double Voice Test   ===
 
 // This script serves as a test of ChucK's capability of
-// playing multiple simultaneos voices, using MIDI notes
+// playing multiple simultaneous voices, using MIDI notes
 // 
 // Prelude No.2 in C Minor (BWV 847), from the Well Tempered Clavier Book I - J. S. Bach
 // (source: https://musescore.com/classicman/scores/227966)
