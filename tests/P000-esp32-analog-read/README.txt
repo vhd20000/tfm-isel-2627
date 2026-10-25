@@ -1,0 +1,1 @@
+This test serves as an "Hello World" to the ESP32-C3 microcontroller. It simply reads analog data from the board and prints it to the Serial Monitor
