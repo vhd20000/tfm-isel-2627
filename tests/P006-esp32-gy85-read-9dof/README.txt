@@ -1,0 +1,1 @@
+This is a simple script that reads the data of a gy85 IMU sensor (Accelerometer, Gyroscope and Magnetometer) and prints the X, Y and Z values of each
