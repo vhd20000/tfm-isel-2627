@@ -39,15 +39,35 @@ fun void run() {
         while( oin.recv(msg) )
         {
             // Pedal
-            else if (msg.address == OscAddresses.PEDAL) {
+            if (msg.address == OscAddresses.PEDAL) {
                 msg.getInt(0) => int value;
                 pedalInstrument.play(value);
                 <<< "Address:", OscAddresses.PEDAL, "value:", value >>>;
             }
             // Slider
-            if (msg.address == OscAddresses.SLIDER) {
+            else if (msg.address == OscAddresses.SLIDER) {
                 msg.getInt(0) => int value;
                 <<< "Address:", OscAddresses.SLIDER, "value:", value >>>;
+            }
+            // GY-85 test (movement sensor)
+            else if (msg.address == OscAddresses.GY85) {
+                msg.getInt(0) => int accX;
+                msg.getInt(1) => int accY;
+                msg.getInt(2) => int accZ;
+
+                msg.getInt(3) => int gyrX;
+                msg.getInt(4) => int gyrY;
+                msg.getInt(5) => int gyrZ;
+
+                msg.getInt(6) => int magX;
+                msg.getInt(7) => int magY;
+                msg.getInt(8) => int magZ;
+                
+                "" => string receivedData;
+                receivedData + "ACC  X: " + accX + " Y: " + accY + " Z: " + accZ + " | " => receivedData;
+                receivedData + "GYR  X: " + gyrX + " Y: " + gyrY + " Z: " + gyrZ + " | " => receivedData;
+                receivedData + "MAG  X: " + magX + " Y: " + magY + " Z: " + magZ => receivedData;
+                <<< "Address:", OscAddresses.GY85, " | ", receivedData >>>;
             }
             // else if () { ... }
         }
