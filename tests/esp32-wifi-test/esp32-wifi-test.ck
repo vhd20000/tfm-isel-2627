@@ -16,7 +16,7 @@
 //  to play
 
 // =============================
-// --- Constants
+// --- CONSTANTS
 
 // Play mode (PITCH - 0 / SCALE - 1)
 1 => int PLAY_MODE;
